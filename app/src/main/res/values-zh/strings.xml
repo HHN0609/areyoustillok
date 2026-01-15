@@ -9,7 +9,7 @@
     <string name="btn_start">开始使用</string>
     <string name="app_title_main">你还好么？</string>
     <string name="btn_im_ok">我还活着</string>
-    <string name="btn_done">今日已打卡</string>
+    <string name="btn_done">已打卡</string>
     <string name="status_waiting">状态: 等待打卡</string>
     <string name="status_checked_in">状态: 今日已打卡</string>
     <string name="prefix_last_checkin">上次打卡: </string>

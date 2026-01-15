@@ -103,6 +103,7 @@
                 android:text="@string/btn_im_ok"
                 android:textSize="32sp"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 android:background="@drawable/bg_checkin_button"
                 app:backgroundTint="@null"
                 android:elevation="12dp"
