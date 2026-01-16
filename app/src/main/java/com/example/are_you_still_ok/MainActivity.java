@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.are_you_still_ok.network.ApiResponse;
 import com.example.are_you_still_ok.network.CheckinResponse;
@@ -69,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
         loadLocale();
         
         setContentView(R.layout.activity_main);
+
+        // Setup Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
+        }
 
         // Init Views
         registerLayout = findViewById(R.id.register_layout);
