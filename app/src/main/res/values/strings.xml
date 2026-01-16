@@ -35,4 +35,8 @@
     <string name="btn_switch_language">Language/语言</string>
     <string name="status_overdue">Status: Overdue! Please Check-in</string>
     <string name="btn_im_still_ok">I\'M STILL OK</string>
+    <string name="action_about">About Developers</string>
+    <string name="about_title">About Developers</string>
+    <string name="about_content">Developers:\n\nDbdk\nhttps://github.com/HHN0609\n\nShrink\nhttps://github.com/Shrink9</string>
+    <string name="btn_close">Close</string>
 </resources>

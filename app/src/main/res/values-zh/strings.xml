@@ -35,4 +35,8 @@
     <string name="btn_switch_language">Language/语言</string>
     <string name="status_overdue">状态: 已超时！请立即打卡</string>
     <string name="btn_im_still_ok">我依然安好</string>
+    <string name="action_about">开发者信息</string>
+    <string name="about_title">开发者信息</string>
+    <string name="about_content">开发者:\n\nDbdk\nhttps://github.com/HHN0609\n\nShrink\nhttps://github.com/Shrink9</string>
+    <string name="btn_close">关闭</string>
 </resources>

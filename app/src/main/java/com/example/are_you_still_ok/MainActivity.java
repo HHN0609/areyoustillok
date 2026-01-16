@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.text.util.Linkify;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -139,6 +140,9 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.action_language) {
             showLanguageDialog();
             return true;
+        } else if (item.getItemId() == R.id.action_about) {
+            showDeveloperInfo();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -159,6 +163,23 @@ public class MainActivity extends AppCompatActivity {
         resources.updateConfiguration(config, dm);
     }
     
+    private void showDeveloperInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getString(R.string.about_title));
+        
+        final TextView message = new TextView(this);
+        message.setText(getString(R.string.about_content));
+        message.setPadding(50, 50, 50, 50);
+        message.setTextSize(16);
+        // Make links clickable
+        message.setAutoLinkMask(Linkify.WEB_URLS);
+        message.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+        
+        builder.setView(message);
+        builder.setPositiveButton(getString(R.string.btn_close), null);
+        builder.show();
+    }
+
     private void showLanguageDialog() {
         final String[] languages = {"English", "中文"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
