@@ -15,8 +15,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/white"
-            android:elevation="4dp"
+            android:background="@android:color/transparent"
+            android:elevation="0dp"
             app:titleTextColor="@color/black"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -35,13 +35,27 @@
             android:orientation="vertical"
             android:gravity="center">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/welcome_setup"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="32dp"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="32dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/ic_launcher"
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="@string/app_name" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_setup"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/et_username"
