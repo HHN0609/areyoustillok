@@ -13,37 +13,61 @@
         android:textStyle="bold"
         android:layout_marginBottom="16dp"/>
 
-    <EditText
-        android:id="@+id/et_edit_username"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:hint="@string/hint_your_name"
-        android:inputType="textPersonName"
-        android:layout_marginBottom="16dp"/>
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <EditText
-        android:id="@+id/et_edit_phone"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_edit_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:hint="@string/hint_phone_opt"
-        android:inputType="phone"
-        android:layout_marginBottom="16dp"/>
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <EditText
-        android:id="@+id/et_edit_emergency_phone"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_edit_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:hint="@string/hint_emergency_phone"
-        android:inputType="phone"
-        android:layout_marginBottom="16dp"/>
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <EditText
-        android:id="@+id/et_edit_golden_hours"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_edit_emergency_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:hint="@string/hint_golden_hours"
-        android:inputType="number"
-        android:layout_marginBottom="16dp"/>
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_edit_golden_hours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
         android:id="@+id/cb_edit_remind_enabled"
