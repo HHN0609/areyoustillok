@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadLocale() {
         SharedPreferences prefs = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        String language = prefs.getString(KEY_LANGUAGE, "en");
+        String language = prefs.getString(KEY_LANGUAGE, "zh");
         setLocale(language);
     }
 
