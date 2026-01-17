@@ -4,7 +4,7 @@
     <string name="hint_username_req">您的姓名 (必填)</string>
     <string name="hint_phone_opt">您的电话 (开启本人提醒时必填)</string>
     <string name="hint_emergency_phone_req">紧急联系人电话 (必填)</string>
-    <string name="hint_golden_hours">黄金时间 (默认 24小时)</string>
+    <string name="hint_golden_hours">打卡间隔时间 (默认 24小时)</string>
     <string name="enable_reminder">开启短信提醒我</string>
     <string name="btn_start">开始使用</string>
     <string name="app_title_main">你还好么?</string>
@@ -23,7 +23,7 @@
     <string name="msg_fill_all">请填写所有字段</string>
     <string name="msg_username_emergency_req">用户名和紧急联系人电话必填</string>
     <string name="msg_phone_req_remind">开启本人提醒时必须填写您的电话</string>
-    <string name="msg_invalid_golden_hours">无效的黄金时间</string>
+    <string name="msg_invalid_golden_hours">无效的打卡间隔时间</string>
     <string name="msg_welcome">欢迎 %s</string>
     <string name="msg_reg_failed">注册失败</string>
     <string name="msg_network_error">网络错误: %s</string>

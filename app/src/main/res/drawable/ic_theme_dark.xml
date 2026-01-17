@@ -4,8 +4,14 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
-    <path
-        android:fillColor="#424242"
-        android:pathData="M4,4h16v16h-16z" />
-</vector>
 
+    <!-- 背景圆：使用主题主色 -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M12,2a10,10 0 1,0 0,20a10,10 0 1,0 0,-20z" />
+
+    <!-- 月亮：使用主色上的前景色 -->
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M15,6a5.5,5.5 0 1,0 0,12a6.5,6.5 0 1,1 0,-12z" />
+</vector>

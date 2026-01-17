@@ -4,11 +4,29 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
-    <path
-        android:fillColor="#2196F3"
-        android:pathData="M4,4h16v16h-16z" />
-    <path
-        android:fillColor="#BBDEFB"
-        android:pathData="M4,12h16v8h-16z" />
-</vector>
 
+    <!-- 背景圆：使用主题主色 -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M12,2a10,10 0 1,0 0,20a10,10 0 1,0 0,-20z" />
+
+    <!-- 机器人头 -->
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M9,8a3,3 0 0,1 6,0L15,10L9,10L9,8z" />
+
+    <!-- 身体 -->
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M8.5,10h7v5h-7z" />
+
+    <!-- 腿 -->
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M10,15v2h-1.5v-2zM15,15v2h-1.5v-2z" />
+
+    <!-- 触角 -->
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M10,7L9,6M14,7L15,6" />
+</vector>

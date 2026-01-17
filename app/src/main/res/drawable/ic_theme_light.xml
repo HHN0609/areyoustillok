@@ -4,8 +4,40 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
-    <path
-        android:fillColor="#FFC107"
-        android:pathData="M4,4h16v16h-16z" />
-</vector>
 
+    <!-- 背景圆：使用主题的主色，适配浅色/深色模式 -->
+    <path
+        android:fillColor="?attr/colorPrimary"
+        android:pathData="M12,2a10,10 0 1,0 0,20a10,10 0 1,0 0,-20z" />
+
+    <!-- 太阳圆盘 -->
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M12,7.5a4.5,4.5 0 1,0 0,9a4.5,4.5 0 1,0 0,-9z" />
+
+    <!-- 光芒，使用与圆盘相同的前景色 -->
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M12,3.5L12,5.5" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M12,18.5L12,20.5" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M5.5,12L7.5,12" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M16.5,12L18.5,12" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M7.3,7.3L8.7,8.7" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M15.3,15.3L16.7,16.7" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M7.3,16.7L8.7,15.3" />
+    <path
+        android:fillColor="?attr/colorOnPrimary"
+        android:pathData="M15.3,8.7L16.7,7.3" />
+</vector>

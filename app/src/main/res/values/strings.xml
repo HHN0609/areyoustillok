@@ -4,7 +4,7 @@
     <string name="hint_username_req">Your Name (Required)</string>
     <string name="hint_phone_opt">Your Phone (Optional unless Remind Enabled)</string>
     <string name="hint_emergency_phone_req">Emergency Contact Phone (Required)</string>
-    <string name="hint_golden_hours">Golden Hours (Default 24)</string>
+    <string name="hint_golden_hours">Check-in Time Gap (Default 24)</string>
     <string name="enable_reminder">Enable SMS Reminder to Me</string>
     <string name="btn_start">Start</string>
     <string name="app_title_main">Are You OK?</string>
@@ -23,7 +23,7 @@
     <string name="msg_fill_all">Please fill in all fields</string>
     <string name="msg_username_emergency_req">Username and Emergency Phone are required</string>
     <string name="msg_phone_req_remind">Your Phone is required when Remind Me is enabled</string>
-    <string name="msg_invalid_golden_hours">Invalid Golden Hours</string>
+    <string name="msg_invalid_golden_hours">Invalid Check-in Time Gap</string>
     <string name="msg_welcome">Welcome %s</string>
     <string name="msg_reg_failed">Registration failed</string>
     <string name="msg_network_error">Network error: %s</string>
