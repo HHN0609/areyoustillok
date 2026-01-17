@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.are_you_still_ok.network.ApiResponse;
@@ -61,15 +62,20 @@ public class MainActivity extends AppCompatActivity {
     private static final String PREF_NAME = "AreYouOKPrefs";
     private static final String KEY_USER_ID = "USER_ID";
     private static final String KEY_LANGUAGE = "LANGUAGE";
+    private static final String KEY_THEME_MODE = "THEME_MODE";
+    private static final int THEME_MODE_SYSTEM = 0;
+    private static final int THEME_MODE_LIGHT = 1;
+    private static final int THEME_MODE_DARK = 2;
+
+    private Menu optionsMenu;
 
     private User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-        // Load Locale before setting content view
+        applySavedTheme();
         loadLocale();
+        super.onCreate(savedInstanceState);
         
         setContentView(R.layout.activity_main);
 
@@ -132,6 +138,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        optionsMenu = menu;
+        int mode = getSavedThemeMode();
+        updateThemeMenuChecked(mode);
         return true;
     }
 
@@ -143,8 +152,71 @@ public class MainActivity extends AppCompatActivity {
         } else if (item.getItemId() == R.id.action_about) {
             showDeveloperInfo();
             return true;
+        } else if (item.getItemId() == R.id.action_theme_light) {
+            setThemeMode(THEME_MODE_LIGHT);
+            updateThemeMenuChecked(THEME_MODE_LIGHT);
+            return true;
+        } else if (item.getItemId() == R.id.action_theme_dark) {
+            setThemeMode(THEME_MODE_DARK);
+            updateThemeMenuChecked(THEME_MODE_DARK);
+            return true;
+        } else if (item.getItemId() == R.id.action_theme_system) {
+            setThemeMode(THEME_MODE_SYSTEM);
+            updateThemeMenuChecked(THEME_MODE_SYSTEM);
+            return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private int getSavedThemeMode() {
+        SharedPreferences prefs = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
+        return prefs.getInt(KEY_THEME_MODE, THEME_MODE_SYSTEM);
+    }
+
+    private void updateThemeMenuChecked(int mode) {
+        if (optionsMenu == null) {
+            return;
+        }
+        MenuItem lightItem = optionsMenu.findItem(R.id.action_theme_light);
+        MenuItem darkItem = optionsMenu.findItem(R.id.action_theme_dark);
+        MenuItem systemItem = optionsMenu.findItem(R.id.action_theme_system);
+        if (lightItem != null) {
+            lightItem.setChecked(mode == THEME_MODE_LIGHT);
+        }
+        if (darkItem != null) {
+            darkItem.setChecked(mode == THEME_MODE_DARK);
+        }
+        if (systemItem != null) {
+            systemItem.setChecked(mode == THEME_MODE_SYSTEM);
+        }
+    }
+
+    private void applySavedTheme() {
+        int mode = getSavedThemeMode();
+        int delegateMode;
+        if (mode == THEME_MODE_LIGHT) {
+            delegateMode = AppCompatDelegate.MODE_NIGHT_NO;
+        } else if (mode == THEME_MODE_DARK) {
+            delegateMode = AppCompatDelegate.MODE_NIGHT_YES;
+        } else {
+            delegateMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+        }
+        AppCompatDelegate.setDefaultNightMode(delegateMode);
+    }
+
+    private void setThemeMode(int mode) {
+        SharedPreferences.Editor editor = getSharedPreferences(PREF_NAME, MODE_PRIVATE).edit();
+        editor.putInt(KEY_THEME_MODE, mode);
+        editor.apply();
+        int delegateMode;
+        if (mode == THEME_MODE_LIGHT) {
+            delegateMode = AppCompatDelegate.MODE_NIGHT_NO;
+        } else if (mode == THEME_MODE_DARK) {
+            delegateMode = AppCompatDelegate.MODE_NIGHT_YES;
+        } else {
+            delegateMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+        }
+        AppCompatDelegate.setDefaultNightMode(delegateMode);
     }
 
     private void loadLocale() {
@@ -183,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
     private void showLanguageDialog() {
         final String[] languages = {"English", "中文"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Choose Language");
+        builder.setTitle(getString(R.string.dialog_title_choose_language));
         builder.setItems(languages, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

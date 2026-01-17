@@ -39,4 +39,9 @@
     <string name="about_title">About Developers</string>
     <string name="about_content">Developers:\n\nDbdk\nhttps://github.com/HHN0609\n\nShrink\nhttps://github.com/Shrink9</string>
     <string name="btn_close">Close</string>
+    <string name="dialog_title_choose_language">Choose Language</string>
+    <string name="menu_theme">Theme</string>
+    <string name="theme_light">Light mode</string>
+    <string name="theme_dark">Dark mode</string>
+    <string name="theme_system">Follow system</string>
 </resources>
