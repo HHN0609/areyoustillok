@@ -26,7 +26,7 @@
     <string name="msg_invalid_golden_hours">Invalid Check-in Time Gap</string>
     <string name="msg_welcome">Welcome %s</string>
     <string name="msg_reg_failed">Registration failed</string>
-    <string name="msg_network_error">Network error: %s</string>
+    <string name="msg_network_error">Network error</string>
     <string name="msg_checkin_success">Checked in successfully!</string>
     <string name="msg_checkin_failed">Check-in failed</string>
     <string name="msg_fields_empty">Fields cannot be empty</string>

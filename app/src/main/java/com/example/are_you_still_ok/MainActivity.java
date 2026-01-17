@@ -298,17 +298,14 @@ public class MainActivity extends AppCompatActivity {
                     currentUser = response.body().data;
                     showMainUI();
                 } else {
-                    // If fetching user fails, maybe clear prefs and show register? 
-                    // Or just show error. For now, let's show error and stay on register (or empty main).
-                    Toast.makeText(MainActivity.this, "Failed to fetch user info", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, getString(R.string.msg_network_error), Toast.LENGTH_SHORT).show();
                     showRegisterUI();
                 }
             }
 
             @Override
             public void onFailure(Call<ApiResponse<User>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Network error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                // Fallback to register UI so user isn't stuck on loading
+                Toast.makeText(MainActivity.this, getString(R.string.msg_network_error), Toast.LENGTH_SHORT).show();
                 showRegisterUI();
             }
         });
@@ -412,16 +409,14 @@ public class MainActivity extends AppCompatActivity {
                     showMainUI();
                     Toast.makeText(MainActivity.this, String.format(getString(R.string.msg_welcome), user.username), Toast.LENGTH_SHORT).show();
                 } else {
-                    String msg = getString(R.string.msg_reg_failed);
-                    if (response.body() != null) msg += ": " + response.body().message;
-                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, getString(R.string.msg_network_error), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ApiResponse<User>> call, Throwable t) {
                 btnStart.setEnabled(true);
-                Toast.makeText(MainActivity.this, String.format(getString(R.string.msg_network_error), t.getMessage()), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.msg_network_error), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -437,7 +432,6 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ApiResponse<CheckinResponse>> call, Response<ApiResponse<CheckinResponse>> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().code == 200) {
                     String checkinTime = response.body().data.checkinTime;
-                    // Update memory
                     if (currentUser != null) {
                         currentUser.lastCheckinTime = checkinTime;
                     }
@@ -445,16 +439,14 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, getString(R.string.msg_checkin_success), Toast.LENGTH_SHORT).show();
                 } else {
                     btnCheckin.setEnabled(true);
-                    String msg = getString(R.string.msg_checkin_failed);
-                    if (response.body() != null) msg += ": " + response.body().message;
-                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, getString(R.string.msg_network_error), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ApiResponse<CheckinResponse>> call, Throwable t) {
                 btnCheckin.setEnabled(true);
-                Toast.makeText(MainActivity.this, String.format(getString(R.string.msg_network_error), t.getMessage()), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.msg_network_error), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -532,19 +524,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ApiResponse<User>> call, Response<ApiResponse<User>> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().code == 200) {
-                    // Fetch latest user info immediately after update
                     fetchUserInfo(userId);
                     Toast.makeText(MainActivity.this, getString(R.string.msg_profile_updated), Toast.LENGTH_SHORT).show();
                 } else {
-                    String msg = getString(R.string.msg_update_failed);
-                    if (response.body() != null) msg += ": " + response.body().message;
-                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, getString(R.string.msg_network_error), Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<ApiResponse<User>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, String.format(getString(R.string.msg_network_error), t.getMessage()), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, getString(R.string.msg_network_error), Toast.LENGTH_SHORT).show();
             }
         });
     }

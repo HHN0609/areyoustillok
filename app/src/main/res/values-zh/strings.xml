@@ -26,7 +26,7 @@
     <string name="msg_invalid_golden_hours">无效的打卡间隔时间</string>
     <string name="msg_welcome">欢迎 %s</string>
     <string name="msg_reg_failed">注册失败</string>
-    <string name="msg_network_error">网络错误: %s</string>
+    <string name="msg_network_error">网络错误</string>
     <string name="msg_checkin_success">打卡成功！</string>
     <string name="msg_checkin_failed">打卡失败</string>
     <string name="msg_fields_empty">字段不能为空</string>
